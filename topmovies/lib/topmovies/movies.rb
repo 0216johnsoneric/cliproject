@@ -12,9 +12,11 @@ class TopMovies::Movies
   def self.movie_info
     doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/browse/in-theaters/"))
     puts "Todays Top Box Office Movies"
+    container = doc.css("#main_container .mb-movies")
+    binding.pry
 
     movie_1 = self.new
-    movie_1.name = doc1.css()[0].text.strip
+    movie_1.name = doc1.css("")[0].text.strip
     movie_1.score = doc1.css()[0].text.strip
     movie_1.url = doc1.css()[0].text.strip.attr("")
 
@@ -33,7 +35,8 @@ class TopMovies::Movies
 
   def self.more_info
     top_movies = self.movie_info
-
+  end
+end
 
 
 

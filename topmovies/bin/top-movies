@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require '../lib/topmovies'
+require './lib/topmovies'
 
 TopMovies::CLI.new.call
